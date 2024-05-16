@@ -115,7 +115,7 @@ saveButton.addEventListener("click", () => {
 const searchInput = document.querySelector(".search");
 searchInput.addEventListener("input", function() {
   const search = this.value.toLowerCase();
-  const filteredData = data.filter(item => {
+  const filterData = data.filter(item => {
     return item.name.toLowerCase().includes(search) ||
             item.last.toLowerCase().includes(search) ||
             item.handle.toLowerCase().includes(search);
@@ -123,7 +123,7 @@ searchInput.addEventListener("input", function() {
 
 tableBody.innerHTML = "";
 
-filteredData.forEach((item, index) => {
+filterData.forEach((item, index) => {
   loadDataToTable(item.name, item.last, item.handle, index);
 });
 });
